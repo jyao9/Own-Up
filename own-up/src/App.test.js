@@ -1,9 +1,18 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import { expect } from "chai";
+import { shallow } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+import Enzyme from "enzyme";
+import React from "react";
+// import sinon from 'sinon';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+import App from "./App";
+import QuoteRatePage from "./components/QuoteRatePage";
+
+Enzyme.configure({ adapter: new Adapter() });
+
+describe("<App />", () => {
+  it("renders one <QuoteRatePage /> component", () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find(QuoteRatePage)).to.have.lengthOf(1);
+  });
 });
