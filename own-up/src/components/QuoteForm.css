@@ -1,6 +1,13 @@
 form {
   display: flex;
   flex-direction: row;
+  height: 150px;
+  width: 550px;
+  position: relative;
+}
+
+.col-spacer {
+  margin: 0 auto;
 }
 
 .col {
@@ -9,6 +16,34 @@ form {
 }
 
 label {
-  width: 300px;
+  width: 250px;
   margin-bottom: 30px;
+  font-size: 12px;
+  display: flex;
+  justify-content: flex-end;
+  line-height: 29px;
+}
+
+input,
+select {
+  margin-left: 10px;
+  border: 2px solid lightgray;
+  padding: 5px;
+  width: 145px;
+}
+
+button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 15px;
+  background: rgb(7, 43, 7);
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgb(25, 95, 25);
 }

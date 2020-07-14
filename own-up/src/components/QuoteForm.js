@@ -53,6 +53,18 @@ class QuoteForm extends React.Component {
             />
           </label>
           <label>
+            Credit Score
+            <input
+              className="credit-score"
+              type="text"
+              value={this.state.creditScore}
+              onChange={this.handleCreditScoreChange}
+            />
+          </label>
+        </div>
+        <div className="col-spacer"></div>
+        <div className="col">
+          <label>
             Property Type
             <select
               className="property-type"
@@ -65,18 +77,6 @@ class QuoteForm extends React.Component {
               <option value="MultiFamily">Multi Family</option>
             </select>
           </label>
-        </div>
-        <div className="col">
-          <label>
-            Credit Score
-            <input
-              className="credit-score"
-              type="text"
-              value={this.state.creditScore}
-              onChange={this.handleCreditScoreChange}
-            />
-          </label>
-
           <label>
             Occupancy
             <select
