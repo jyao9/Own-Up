@@ -46,6 +46,7 @@ class QuoteForm extends React.Component {
           <label>
             Loan Size
             <input
+              className="loan-size"
               type="text"
               value={this.state.loanSize}
               onChange={this.handleLoanSizeChange}
@@ -54,6 +55,7 @@ class QuoteForm extends React.Component {
           <label>
             Property Type
             <select
+              className="property-type"
               value={this.state.propertyType}
               onChange={this.handlePropertyTypeChange}
             >
@@ -68,6 +70,7 @@ class QuoteForm extends React.Component {
           <label>
             Credit Score
             <input
+              className="credit-score"
               type="text"
               value={this.state.creditScore}
               onChange={this.handleCreditScoreChange}
@@ -77,6 +80,7 @@ class QuoteForm extends React.Component {
           <label>
             Occupancy
             <select
+              className="occupancy"
               value={this.state.occupancy}
               onChange={this.handleOccupancyChange}
             >
