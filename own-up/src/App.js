@@ -1,14 +1,10 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import QuoteForm from "./components/QuoteForm";
+import QuoteRatePage from "./components/QuoteRatePage";
 
 function App() {
-  return (
-    <div className="base">
-      <QuoteForm />
-    </div>
-  );
+  return <QuoteRatePage />;
 }
 
 export default App;
