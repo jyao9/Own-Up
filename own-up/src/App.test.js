@@ -3,7 +3,6 @@ import { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import Enzyme from "enzyme";
 import React from "react";
-// import sinon from 'sinon';
 
 import App from "./App";
 import QuoteRatePage from "./components/QuoteRatePage";
