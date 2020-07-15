@@ -1,4 +1,5 @@
 import React from "react";
+import NumberFormat from "react-number-format";
 import "./QuoteForm.css";
 
 class QuoteForm extends React.Component {
@@ -11,6 +12,7 @@ class QuoteForm extends React.Component {
       occupancy: "Primary",
     };
 
+    this.handleLoanSizeValueChange = this.handleLoanSizeValueChange.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -21,6 +23,12 @@ class QuoteForm extends React.Component {
     const value = target.value;
     this.setState({
       [name]: value,
+    });
+  }
+
+  handleLoanSizeValueChange(values) {
+    this.setState({
+      loanSize: values.value,
     });
   }
 
@@ -35,12 +43,15 @@ class QuoteForm extends React.Component {
         <div className="col">
           <label>
             Loan Size
-            <input
+            <NumberFormat
+              thousandSeparator={true}
+              prefix={"$"}
+              allowLeadingZeros={false}
               name="loanSize"
               className="loan-size"
               type="text"
               value={this.state.loanSize}
-              onChange={this.handleInputChange}
+              onValueChange={this.handleLoanSizeValueChange}
             />
           </label>
           <label>
@@ -48,7 +59,9 @@ class QuoteForm extends React.Component {
             <input
               name="creditScore"
               className="credit-score"
-              type="text"
+              type="number"
+              min="300"
+              max="800"
               value={this.state.creditScore}
               onChange={this.handleInputChange}
             />

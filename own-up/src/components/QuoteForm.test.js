@@ -21,23 +21,11 @@ describe("<QuoteForm />", () => {
     expect(wrapper.find("label")).to.have.lengthOf(4);
   });
 
-  it("renders 2 `input`", () => {
-    const wrapper = shallow(<QuoteForm />);
-    expect(wrapper.find("input")).to.have.lengthOf(2);
-  });
-
-  it("renders 2 `select`", () => {
-    const wrapper = shallow(<QuoteForm />);
-    expect(wrapper.find("select")).to.have.lengthOf(2);
-  });
-
   // Test state changes.
 
   it("changes loanSize state when loan size input is changed", () => {
     const wrapper = shallow(<QuoteForm />);
-    wrapper
-      .find(".loan-size")
-      .simulate("change", { target: { value: 100000, name: "loanSize" } });
+    wrapper.find(".loan-size").simulate("valueChange", { value: 100000 });
     expect(wrapper.state("loanSize")).to.equal(100000);
   });
 
@@ -69,11 +57,9 @@ describe("<QuoteForm />", () => {
 
   it("should update occupancy state when property type is changed", () => {
     const wrapper = shallow(<QuoteForm />);
-    wrapper
-      .find(".occupancy")
-      .simulate("change", {
-        target: { value: "Investment", name: "occupancy" },
-      });
+    wrapper.find(".occupancy").simulate("change", {
+      target: { value: "Investment", name: "occupancy" },
+    });
     expect(wrapper.state("occupancy")).to.equal("Investment");
   });
 });

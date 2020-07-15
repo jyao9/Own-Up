@@ -29,6 +29,12 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Libraries and Frameworks Used
 
+### HTML/CSS
+
+#### react-number-format
+
+React component to format number in an input or as a text. Allows easy addition of a prefix, suffix and thousand separator.
+
 ### API Calls
 
 #### Axios
