@@ -37,7 +37,7 @@ describe("<QuoteForm />", () => {
     const wrapper = shallow(<QuoteForm />);
     wrapper
       .find(".loan-size")
-      .simulate("change", { target: { value: 100000 } });
+      .simulate("change", { target: { value: 100000, name: "loanSize" } });
     expect(wrapper.state("loanSize")).to.equal(100000);
   });
 
@@ -45,7 +45,7 @@ describe("<QuoteForm />", () => {
     const wrapper = shallow(<QuoteForm />);
     wrapper
       .find(".credit-score")
-      .simulate("change", { target: { value: 750 } });
+      .simulate("change", { target: { value: 750, name: "creditScore" } });
     expect(wrapper.state("creditScore")).to.equal(750);
   });
 
@@ -58,7 +58,7 @@ describe("<QuoteForm />", () => {
     const wrapper = shallow(<QuoteForm />);
     wrapper
       .find(".property-type")
-      .simulate("change", { target: { value: "Condo" } });
+      .simulate("change", { target: { value: "Condo", name: "propertyType" } });
     expect(wrapper.state("propertyType")).to.equal("Condo");
   });
 
@@ -71,7 +71,9 @@ describe("<QuoteForm />", () => {
     const wrapper = shallow(<QuoteForm />);
     wrapper
       .find(".occupancy")
-      .simulate("change", { target: { value: "Investment" } });
+      .simulate("change", {
+        target: { value: "Investment", name: "occupancy" },
+      });
     expect(wrapper.state("occupancy")).to.equal("Investment");
   });
 });

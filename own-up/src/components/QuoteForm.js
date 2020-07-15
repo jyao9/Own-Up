@@ -11,27 +11,17 @@ class QuoteForm extends React.Component {
       occupancy: "Primary",
     };
 
-    this.handleCreditScoreChange = this.handleCreditScoreChange.bind(this);
-    this.handleLoanSizeChange = this.handleLoanSizeChange.bind(this);
-    this.handleOccupancyChange = this.handleOccupancyChange.bind(this);
-    this.handlePropertyTypeChange = this.handlePropertyTypeChange.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleLoanSizeChange(event) {
-    this.setState({ loanSize: event.target.value });
-  }
-
-  handleCreditScoreChange(event) {
-    this.setState({ creditScore: event.target.value });
-  }
-
-  handlePropertyTypeChange(event) {
-    this.setState({ propertyType: event.target.value });
-  }
-
-  handleOccupancyChange(event) {
-    this.setState({ occupancy: event.target.value });
+  handleInputChange(event) {
+    const target = event.target;
+    const name = target.name;
+    const value = target.value;
+    this.setState({
+      [name]: value,
+    });
   }
 
   handleSubmit(event) {
@@ -46,19 +36,21 @@ class QuoteForm extends React.Component {
           <label>
             Loan Size
             <input
+              name="loanSize"
               className="loan-size"
               type="text"
               value={this.state.loanSize}
-              onChange={this.handleLoanSizeChange}
+              onChange={this.handleInputChange}
             />
           </label>
           <label>
             Credit Score
             <input
+              name="creditScore"
               className="credit-score"
               type="text"
               value={this.state.creditScore}
-              onChange={this.handleCreditScoreChange}
+              onChange={this.handleInputChange}
             />
           </label>
         </div>
@@ -67,9 +59,10 @@ class QuoteForm extends React.Component {
           <label>
             Property Type
             <select
+              name="propertyType"
               className="property-type"
               value={this.state.propertyType}
-              onChange={this.handlePropertyTypeChange}
+              onChange={this.handleInputChange}
             >
               <option value="SingleFamily">Single Family</option>
               <option value="Condo">Condo</option>
@@ -80,9 +73,10 @@ class QuoteForm extends React.Component {
           <label>
             Occupancy
             <select
+              name="occupancy"
               className="occupancy"
               value={this.state.occupancy}
-              onChange={this.handleOccupancyChange}
+              onChange={this.handleInputChange}
             >
               <option value="Primary">Primary</option>
               <option value="Secondary">Secondary</option>
