@@ -1,5 +1,7 @@
 import React from "react";
 import NumberFormat from "react-number-format";
+import { connect } from "react-redux";
+import fetchQuoteRates from "../actions/queryRateActions";
 import "./QuoteForm.css";
 
 class QuoteForm extends React.Component {
@@ -35,6 +37,7 @@ class QuoteForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log(this.state);
+    this.props.fetchQuoteRates(this.state);
   }
 
   render() {
@@ -47,6 +50,7 @@ class QuoteForm extends React.Component {
               thousandSeparator={true}
               prefix={"$"}
               allowLeadingZeros={false}
+              allowNegative={false}
               name="loanSize"
               className="loan-size"
               type="text"
@@ -103,4 +107,4 @@ class QuoteForm extends React.Component {
   }
 }
 
-export default QuoteForm;
+export default connect(null, { fetchQuoteRates })(QuoteForm);
