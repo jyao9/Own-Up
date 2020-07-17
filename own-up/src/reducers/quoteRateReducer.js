@@ -7,9 +7,11 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case FETCH_QUOTE_RATES:
+      console.log("reducer");
+      console.log(action);
       return {
         ...state,
-        quotes: action.quotesRates,
+        quotes: action.quoteRates,
       };
     default:
       return state;
