@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import fetchQuoteRates from "../actions/quoteRateActions";
+import { connect } from "react-redux";
 
 class QuoteRateResults extends Component {
   render() {
@@ -34,8 +35,13 @@ class QuoteRateResults extends Component {
   }
 }
 
+QuoteRateResults.propTypes = {
+  fetchQuoteRates: PropTypes.func.isRequired,
+  quoteRates: PropTypes.array,
+};
+
 const mapStateToProps = (state) => ({
-  quoteRates: state.quoteRates.quotes,
+  quoteRates: state.quoteRates.quoteRates,
 });
 
 export default connect(mapStateToProps, { fetchQuoteRates })(QuoteRateResults);

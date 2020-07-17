@@ -1,7 +1,7 @@
 import { FETCH_QUOTE_RATES } from "../actions/types";
 
 const initialState = {
-  quotesRates: [],
+  quoteRates: null,
 };
 
 export default function (state = initialState, action) {
@@ -11,7 +11,7 @@ export default function (state = initialState, action) {
       console.log(action);
       return {
         ...state,
-        quotes: action.quoteRates,
+        quoteRates: action.quoteRates,
       };
     default:
       return state;
