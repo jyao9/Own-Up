@@ -1,9 +1,9 @@
 import { FETCH_QUOTE_RATES } from "./types";
 import axios from "axios";
 
-export default function fetchQuoteRates(fetchQuoteParams) {
+export const fetchQuoteRates = (fetchQuoteParams) => {
   return function (dispatch) {
-    axios
+    return axios
       .get(
         "https://ss6b2ke2ca.execute-api.us-east-1.amazonaws.com/Prod/quotes",
         {
@@ -27,4 +27,4 @@ export default function fetchQuoteRates(fetchQuoteParams) {
         console.log(error.response.data);
       });
   };
-}
+};

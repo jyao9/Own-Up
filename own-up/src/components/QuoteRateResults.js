@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import fetchQuoteRates from "../actions/quoteRateActions";
+import { fetchQuoteRates } from "../actions/quoteRateActions";
 import { connect } from "react-redux";
 
 class QuoteRateResults extends Component {

@@ -49,4 +49,10 @@ It performs automatic JSON data transformation and has built-in CSRF protection
 
 Enzyme is a JavaScript Testing utility for React that makes it easier to test React Components' output. Able to manipulate, traverse, and in some ways simulate runtime given the output. The API is intuitive and flexible by mimicking jQuery's API for DOM manipulation and traversal.
 
-#### Jest
+#### axios-mock-adapter
+
+Axios adapter that allows to easily mock requests.
+
+#### redux-mock-store
+
+A mock store for testing Redux async action creators and middleware. The mock store will create an array of dispatched actions which serve as an action log for tests.

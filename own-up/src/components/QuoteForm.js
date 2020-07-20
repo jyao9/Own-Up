@@ -1,7 +1,7 @@
 import React from "react";
 import NumberFormat from "react-number-format";
 import { connect } from "react-redux";
-import fetchQuoteRates from "../actions/quoteRateActions";
+import { fetchQuoteRates } from "../actions/quoteRateActions";
 import "./QuoteForm.css";
 
 class QuoteForm extends React.Component {
