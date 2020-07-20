@@ -109,3 +109,4 @@ class QuoteForm extends React.Component {
 }
 
 export default connect(null, { fetchQuoteRates })(QuoteForm);
+export { QuoteForm };

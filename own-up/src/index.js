@@ -1,17 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
 import { Provider } from "react-redux";
-// import store from "./store";
+import store from "./store";
+import QuoteRatePage from "./components/QuoteRatePage";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  // <Provider store={store}>
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  // </Provider>,
+  <Provider store={store}>
+    <QuoteRatePage />
+  </Provider>,
   document.getElementById("root")
 );
 
