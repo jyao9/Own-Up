@@ -51,6 +51,7 @@ class QuoteForm extends React.Component {
               prefix={"$"}
               allowLeadingZeros={false}
               allowNegative={false}
+              decimalScale={2}
               name="loanSize"
               className="loan-size"
               type="text"

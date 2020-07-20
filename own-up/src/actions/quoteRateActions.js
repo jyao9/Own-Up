@@ -18,7 +18,7 @@ export default function fetchQuoteRates(fetchQuoteParams) {
         console.log(response.data);
         return dispatch({
           type: FETCH_QUOTE_RATES,
-          quoteRates: response.data,
+          quoteRates: response.data.rateQuotes,
         });
       })
       .catch((error) => {

@@ -9,8 +9,8 @@ class QuoteRateResults extends Component {
     console.log(this.props);
     let listOfRates;
     if (this.props.quoteRates) {
-      console.log(this.props.quoteRates.rateQuotes);
-      listOfRates = this.props.quoteRates.rateQuotes.map((rate) => {
+      console.log(this.props.quoteRates);
+      listOfRates = this.props.quoteRates.map((rate) => {
         let key =
           rate.lenderName.split("").splice(0, 3).join("") +
           rate.loanType +
