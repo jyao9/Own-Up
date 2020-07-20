@@ -45,10 +45,8 @@ It performs automatic JSON data transformation and has built-in CSRF protection
 
 ### Testing
 
-#### Enzyme and Mocha/Chai
+#### Enzyme
 
 Enzyme is a JavaScript Testing utility for React that makes it easier to test React Components' output. Able to manipulate, traverse, and in some ways simulate runtime given the output. The API is intuitive and flexible by mimicking jQuery's API for DOM manipulation and traversal.
-
-Enzyme was originally designed to work with Mocha (an assertion library).
 
 #### Jest

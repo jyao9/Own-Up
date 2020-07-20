@@ -1,4 +1,3 @@
-import { expect } from "chai";
 import { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import Enzyme from "enzyme";
@@ -11,14 +10,22 @@ Enzyme.configure({ adapter: new Adapter() });
 // Test rendering.
 
 describe("<QuoteForm />", () => {
+  let props;
+
+  beforeEach(() => {
+    props = {
+      users: [],
+    };
+  });
+
   it("renders a `form`", () => {
     const wrapper = shallow(<QuoteForm />);
-    expect(wrapper.find("form")).to.have.lengthOf(1);
+    expect(wrapper.find("form")).toHaveLength(1);
   });
 
   it("renders 4 `label`", () => {
     const wrapper = shallow(<QuoteForm />);
-    expect(wrapper.find("label")).to.have.lengthOf(4);
+    expect(wrapper.find("label")).toHaveLength(4);
   });
 
   // Test state changes.
@@ -26,7 +33,7 @@ describe("<QuoteForm />", () => {
   it("changes loanSize state when loan size input is changed", () => {
     const wrapper = shallow(<QuoteForm />);
     wrapper.find(".loan-size").simulate("valueChange", { value: 100000 });
-    expect(wrapper.state("loanSize")).to.equal(100000);
+    expect(wrapper.state("loanSize")).toEqual(100000);
   });
 
   it("changes creditScore state when credit score input is changed", () => {
@@ -34,12 +41,12 @@ describe("<QuoteForm />", () => {
     wrapper
       .find(".credit-score")
       .simulate("change", { target: { value: 750, name: "creditScore" } });
-    expect(wrapper.state("creditScore")).to.equal(750);
+    expect(wrapper.state("creditScore")).toEqual(750);
   });
 
   it("should have a default propertyType state of `SingleFamily`", () => {
     const wrapper = shallow(<QuoteForm />);
-    expect(wrapper.state("propertyType")).to.equal("SingleFamily");
+    expect(wrapper.state("propertyType")).toEqual("SingleFamily");
   });
 
   it("should update propertyType state when property type is changed", () => {
@@ -47,12 +54,12 @@ describe("<QuoteForm />", () => {
     wrapper
       .find(".property-type")
       .simulate("change", { target: { value: "Condo", name: "propertyType" } });
-    expect(wrapper.state("propertyType")).to.equal("Condo");
+    expect(wrapper.state("propertyType")).toEqual("Condo");
   });
 
   it("should have a default occupancy state of `Primary`", () => {
     const wrapper = shallow(<QuoteForm />);
-    expect(wrapper.state("occupancy")).to.equal("Primary");
+    expect(wrapper.state("occupancy")).toEqual("Primary");
   });
 
   it("should update occupancy state when property type is changed", () => {
@@ -60,6 +67,16 @@ describe("<QuoteForm />", () => {
     wrapper.find(".occupancy").simulate("change", {
       target: { value: "Investment", name: "occupancy" },
     });
-    expect(wrapper.state("occupancy")).to.equal("Investment");
+    expect(wrapper.state("occupancy")).toEqual("Investment");
+  });
+
+  // Test submit button.
+
+  it("should call handleSubmit when button is clicked", () => {
+    props.handleSubmit = jest.fn();
+    const wrapper = shallow(<QuoteForm {...props} />);
+    const spy = jest.spyOn(wrapper.instance().props, "handleSubmit");
+    wrapper.find("button").simulate("click");
+    expect(spy).toHaveBeenCalled();
   });
 });

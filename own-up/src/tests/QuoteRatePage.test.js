@@ -1,4 +1,3 @@
-import { expect } from "chai";
 import { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import Enzyme from "enzyme";
@@ -13,11 +12,11 @@ Enzyme.configure({ adapter: new Adapter() });
 describe("<QuoteRatePage />", () => {
   it("renders one <QuoteForm /> component", () => {
     const wrapper = shallow(<QuoteRatePage />);
-    expect(wrapper.find(QuoteForm)).to.have.lengthOf(1);
+    expect(wrapper.find(QuoteForm)).toHaveLength(1);
   });
 
   it("renders one <QuoteRateResults /> component", () => {
     const wrapper = shallow(<QuoteRatePage />);
-    expect(wrapper.find(QuoteRateResults)).to.have.lengthOf(1);
+    expect(wrapper.find(QuoteRateResults)).toHaveLength(1);
   });
 });
