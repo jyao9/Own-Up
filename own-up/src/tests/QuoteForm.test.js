@@ -14,7 +14,7 @@ describe("<QuoteForm />", () => {
 
   beforeEach(() => {
     props = {
-      users: [],
+      quoteRates: [],
     };
   });
 
@@ -72,11 +72,12 @@ describe("<QuoteForm />", () => {
 
   // Test submit button.
 
-  it("should call handleSubmit when button is clicked", () => {
-    props.handleSubmit = jest.fn();
+  it("should call fetchQuoteRates when form is submitted", () => {
+    const fakeEvent = { preventDefault: () => {} };
+    props.fetchQuoteRates = jest.fn();
     const wrapper = shallow(<QuoteForm {...props} />);
-    const spy = jest.spyOn(wrapper.instance().props, "handleSubmit");
-    wrapper.find("button").simulate("click");
+    const spy = jest.spyOn(wrapper.instance().props, "fetchQuoteRates");
+    wrapper.find("form").simulate("submit", fakeEvent);
     expect(spy).toHaveBeenCalled();
   });
 });
