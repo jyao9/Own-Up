@@ -13,13 +13,14 @@ describe("<QuoteRateResults />", () => {
   beforeEach(() => {
     props = {
       quoteRates: null,
+      isLoading: false,
       fetchQuoteRates: () => {},
     };
   });
 
-  it("doesn't render any rows when quoteRates", () => {
+  it("doesn't render any rows when quoteRates is null", () => {
     const wrapper = shallow(<QuoteRateResults {...props} />);
-    expect(wrapper.find(".row")).toHaveLength(0);
+    expect(wrapper.find(".quote-row")).toHaveLength(0);
   });
 
   it("renders rows when quoteRates are present", () => {
@@ -41,6 +42,6 @@ describe("<QuoteRateResults />", () => {
       apr: 3.45,
     });
     const wrapper = shallow(<QuoteRateResults {...props} />);
-    expect(wrapper.find(".row")).toHaveLength(2);
+    expect(wrapper.find(".quote-result")).toHaveLength(2);
   });
 });

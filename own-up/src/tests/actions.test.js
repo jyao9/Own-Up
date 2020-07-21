@@ -13,7 +13,7 @@ describe("quote rate actions", () => {
   let store;
   beforeEach(() => {
     mock = new MockAdapter(axios);
-    store = mockStore({ quoteRates: null });
+    store = mockStore({ quoteRates: null, isLoading: false });
   });
 
   afterEach(() => {
@@ -30,8 +30,13 @@ describe("quote rate actions", () => {
 
     const expectedActions = [
       {
+        type: types.FETCH_QUOTE_RATES_REQUEST,
+        isLoading: true,
+      },
+      {
         type: types.FETCH_QUOTE_RATES,
         quoteRates: ["quote1", "quote2", "quote3"],
+        isLoading: false,
       },
     ];
 

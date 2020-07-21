@@ -40,3 +40,16 @@
   line-height: 40px;
   text-align: center;
 }
+
+.loading {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  height: 30px;
+  width: 150px;
+  position: absolute;
+  background: white;
+  text-align: center;
+  display: inline-block;
+  line-height: 30px;
+  font-size: 12px;
+}

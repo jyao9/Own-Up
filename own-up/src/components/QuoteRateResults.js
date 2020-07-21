@@ -21,7 +21,7 @@ class QuoteRateResults extends Component {
           rate.loanType +
           rate.apr;
         return (
-          <div className="quote-row" key={key}>
+          <div className="quote-row quote-result" key={key}>
             <div className="quote-column">{rate.lenderName}</div>
             <div className="quote-column">{rate.loanType}</div>
             <div className="quote-column">{rate.interestRate}%</div>
@@ -38,6 +38,7 @@ class QuoteRateResults extends Component {
     }
     return (
       <div>
+        {this.props.isLoading && <div className="loading">Loading...</div>}
         {listOfRates && (
           <div className="quoteTable">
             <div className="columnNames quote-row">
@@ -63,10 +64,12 @@ class QuoteRateResults extends Component {
 QuoteRateResults.propTypes = {
   fetchQuoteRates: PropTypes.func.isRequired,
   quoteRates: PropTypes.array,
+  isLoading: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => ({
   quoteRates: state.quoteRates.quoteRates,
+  isLoading: state.quoteRates.isLoading,
 });
 
 export default connect(mapStateToProps, { fetchQuoteRates })(QuoteRateResults);
