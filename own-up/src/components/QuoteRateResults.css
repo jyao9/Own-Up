@@ -1,0 +1,36 @@
+.quoteTable {
+  border: 1px solid lightgray;
+  margin-top: 40px;
+  border-radius: 5px;
+}
+
+.quote-row {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid lightgray;
+}
+
+.quote-row:last-child {
+  border-bottom: none;
+}
+
+.quote-column {
+  width: 90px;
+  height: 50px;
+  line-height: 50px;
+  margin-left: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: rgb(7, 43, 7);
+  font-size: 12px;
+}
+
+.columnNames .quote-column {
+  text-transform: capitalize;
+  color: gray;
+  white-space: normal;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+}
