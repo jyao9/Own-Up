@@ -41,9 +41,9 @@ class QuoteForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="col">
-          <label>
+      <form className="quote-form" onSubmit={this.handleSubmit}>
+        <div className="form-column">
+          <label className="quote-form-field">
             Loan Size
             <NumberFormat
               thousandSeparator={true}
@@ -58,7 +58,7 @@ class QuoteForm extends React.Component {
               onValueChange={this.handleLoanSizeValueChange}
             />
           </label>
-          <label>
+          <label className="quote-form-field">
             Credit Score
             <input
               name="creditScore"
@@ -71,9 +71,9 @@ class QuoteForm extends React.Component {
             />
           </label>
         </div>
-        <div className="col-spacer"></div>
-        <div className="col">
-          <label>
+        <div className="form-column-spacer"></div>
+        <div className="form-column">
+          <label className="quote-form-field">
             Property Type
             <select
               name="propertyType"
@@ -87,7 +87,7 @@ class QuoteForm extends React.Component {
               <option value="MultiFamily">Multi Family</option>
             </select>
           </label>
-          <label>
+          <label className="quote-form-field">
             Occupancy
             <select
               name="occupancy"

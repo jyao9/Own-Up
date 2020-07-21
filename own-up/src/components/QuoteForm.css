@@ -1,4 +1,4 @@
-form {
+.quote-form {
   display: flex;
   flex-direction: row;
   height: 150px;
@@ -6,16 +6,16 @@ form {
   position: relative;
 }
 
-.col-spacer {
+.form-column-spacer {
   margin: 0 auto;
 }
 
-.col {
+.form-column {
   display: flex;
   flex-direction: column;
 }
 
-label {
+.quote-form-field {
   width: 250px;
   margin-bottom: 30px;
   font-size: 12px;
