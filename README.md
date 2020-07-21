@@ -1,31 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Instructions to Run Code
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Create new folder (name doesn't matter) and cd into the newly created folder.
+2. Run `git clone https://github.com/jyao9/Own-Up.git` in the terminal.
+3. Run `npm install` to install any missing packages.
+4. Create an .env file outside of the src folder of the cloned repository.
+5. In the newly created .env file, add `REACT_APP_OWN_UP_API_KEY={ADD YOUR AUTH TOKEN HERE}`.
+6. Run the app in development mode using `npm start` in the terminal.
+7. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Libraries and Frameworks Used
 
