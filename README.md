@@ -1,7 +1,9 @@
 ## Instructions to Run Code
 
-1. Create new folder (name doesn't matter) and cd into the newly created folder.
-2. Run `git clone https://github.com/jyao9/Own-Up.git` in the terminal.
+\*\*Make sure you have npm installed
+
+1. Run `git clone https://github.com/jyao9/Own-Up.git` in the terminal.
+2. Run `cd Own-Up/own-up/`
 3. Run `npm install` to install any missing packages.
 4. Create an .env file outside of the src folder of the cloned repository. The .env file should be on the same level as the src folder.
 5. In the newly created .env file, add `REACT_APP_OWN_UP_API_KEY={ADD YOUR AUTH TOKEN HERE}` (replacing {ADD YOUR AUTH TOKEN HERE} with an actual auth token).
