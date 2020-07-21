@@ -2,6 +2,7 @@
   border: 1px solid lightgray;
   margin-top: 40px;
   border-radius: 5px;
+  font-size: 12px;
 }
 
 .quote-row {
@@ -23,7 +24,6 @@
   overflow: hidden;
   white-space: nowrap;
   color: rgb(7, 43, 7);
-  font-size: 12px;
 }
 
 .columnNames .quote-column {
@@ -33,4 +33,10 @@
   line-height: normal;
   display: flex;
   align-items: center;
+}
+
+.no-results {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
 }

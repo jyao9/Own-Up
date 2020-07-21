@@ -6,7 +6,7 @@ import "./QuoteRateResults.css";
 
 class QuoteRateResults extends Component {
   render() {
-    let currancyFormatter = new Intl.NumberFormat("en-US", {
+    let currencyFormatter = new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
       minimumFractionDigits: 0,
@@ -26,10 +26,10 @@ class QuoteRateResults extends Component {
             <div className="quote-column">{rate.loanType}</div>
             <div className="quote-column">{rate.interestRate}%</div>
             <div className="quote-column">
-              {currancyFormatter.format(rate.closingCosts)}
+              {currencyFormatter.format(rate.closingCosts)}
             </div>
             <div className="quote-column">
-              {currancyFormatter.format(rate.monthlyPayment.toFixed(0))}
+              {currencyFormatter.format(rate.monthlyPayment.toFixed(0))}
             </div>
             <div className="quote-column">{rate.apr.toFixed(2)}%</div>
           </div>
@@ -48,7 +48,11 @@ class QuoteRateResults extends Component {
               <div className="quote-column">Monthly Payment</div>
               <div className="quote-column">APR</div>
             </div>
-            {listOfRates}
+            {listOfRates.length !== 0 ? (
+              listOfRates
+            ) : (
+              <div className="no-results">No results found</div>
+            )}
           </div>
         )}
       </div>
