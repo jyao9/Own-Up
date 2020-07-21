@@ -1,12 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Instructions to Run Code
 
 1. Create new folder (name doesn't matter) and cd into the newly created folder.
 2. Run `git clone https://github.com/jyao9/Own-Up.git` in the terminal.
 3. Run `npm install` to install any missing packages.
-4. Create an .env file outside of the src folder of the cloned repository.
-5. In the newly created .env file, add `REACT_APP_OWN_UP_API_KEY={ADD YOUR AUTH TOKEN HERE}`.
+4. Create an .env file outside of the src folder of the cloned repository. The .env file should be on the same level as the src folder.
+5. In the newly created .env file, add `REACT_APP_OWN_UP_API_KEY={ADD YOUR AUTH TOKEN HERE}` (replacing {ADD YOUR AUTH TOKEN HERE} with an actual auth token).
 6. Run the app in development mode using `npm start` in the terminal.
 7. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
