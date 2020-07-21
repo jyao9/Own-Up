@@ -14,7 +14,6 @@ class QuoteRateResults extends Component {
     });
     let listOfRates;
     if (this.props.quoteRates) {
-      console.log(this.props.quoteRates);
       listOfRates = this.props.quoteRates.map((rate) => {
         let key =
           rate.lenderName.split("").splice(0, 3).join("") +

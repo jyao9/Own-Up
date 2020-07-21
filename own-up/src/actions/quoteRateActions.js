@@ -2,7 +2,6 @@ import { FETCH_QUOTE_RATES, FETCH_QUOTE_RATES_REQUEST } from "./types";
 import axios from "axios";
 
 export const fetchQuoteRates = (fetchQuoteParams) => {
-  console.log("fetchQuoteRates");
   return function (dispatch) {
     dispatch({
       type: FETCH_QUOTE_RATES_REQUEST,
@@ -19,8 +18,6 @@ export const fetchQuoteRates = (fetchQuoteParams) => {
         }
       )
       .then((response) => {
-        console.log(response.status);
-        console.log(response.data);
         return dispatch({
           type: FETCH_QUOTE_RATES,
           quoteRates: response.data.rateQuotes,
@@ -28,7 +25,6 @@ export const fetchQuoteRates = (fetchQuoteParams) => {
         });
       })
       .catch((error) => {
-        console.log("error");
         console.log(error.response.status);
         console.log(error.response.data);
       });
