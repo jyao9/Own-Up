@@ -101,7 +101,9 @@ class QuoteForm extends React.Component {
             </select>
           </label>
         </div>
-        <button type="submit">Quote Rates</button>
+        <button className="submit-button" type="submit">
+          Quote Rates
+        </button>
       </form>
     );
   }

@@ -1,10 +1,23 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { fetchQuoteRates } from "../actions/quoteRateActions";
+import {
+  fetchQuoteRates,
+  fetchNextQuoteRates,
+} from "../actions/quoteRateActions";
 import { connect } from "react-redux";
 import "./QuoteRateResults.css";
 
 class QuoteRateResults extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleNextButtonClick = this.handleNextButtonClick.bind(this);
+  }
+
+  handleNextButtonClick() {
+    this.props.fetchNextQuoteRates(this.props.next);
+  }
+
   render() {
     let currencyFormatter = new Intl.NumberFormat("en-US", {
       style: "currency",
@@ -55,6 +68,15 @@ class QuoteRateResults extends Component {
             )}
           </div>
         )}
+        {listOfRates && listOfRates.length !== 0 && (
+          <button
+            disabled={!this.props.next}
+            onClick={this.handleNextButtonClick}
+            className="next-button"
+          >
+            Next
+          </button>
+        )}
       </div>
     );
   }
@@ -69,7 +91,11 @@ QuoteRateResults.propTypes = {
 const mapStateToProps = (state) => ({
   quoteRates: state.quoteRates.quoteRates,
   isLoading: state.quoteRates.isLoading,
+  next: state.quoteRates.next,
 });
 
-export default connect(mapStateToProps, { fetchQuoteRates })(QuoteRateResults);
+export default connect(mapStateToProps, {
+  fetchQuoteRates,
+  fetchNextQuoteRates,
+})(QuoteRateResults);
 export { QuoteRateResults };
